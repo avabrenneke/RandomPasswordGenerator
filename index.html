@@ -69,3 +69,50 @@
           </div>
         </div>
       </div>
+      <script>
+        var btn = document.getElementById("clickMe");
+        btn.addEventListener("click", passCriteria);
+
+        var txtArea = document.querySelector('#textarea');
+
+        var errors = document.querySelector('.errors');
+        $(errors).hide();
+
+        function passCriteria(){
+            $(errors).hide();
+            errors.innerHTML = "";
+            var formErrors = '';
+
+            //$('#exampleModal').modal('hide');
+            //return;
+            var passLength = document.querySelector('#password-length').value;
+        
+            var passInt = parseInt(passLength);
+            if (isNaN(passInt) || (passInt < 8 || passInt > 128)){
+                formErrors = "Sorry, invalid password length";
+            }
+
+            //check the checkboxes
+            var checkBoxes = document.querySelector(".form-check-input");
+            var useNumbersBox = document.querySelector('#useNumbers');
+            var useUpperCaseBox = document.querySelector("#useUpperCase");
+            var useLowerCaseBox = document.querySelector("#useLowerCase");
+            var useSpecCharBox = document.querySelector("#useSpecChar");
+
+            var useNumbers = useNumbersBox.checked || false;
+            var useUpperCase = useUpperCaseBox.checked || false;
+            var useLowerCase = useLowerCaseBox.checked || false;
+            var useSpecChar = useSpecCharBox.checked || false;
+
+            if (!useNumbers && !useUpperCase && !useLowerCase && !useSpecChar){
+                if (formErrors){
+                    formErrors+="<br>";
+                }
+                formErrors += "Please select at least one box";
+            }
+        
+            if (formErrors){
+                errors.innerHTML = formErrors;
+                $(errors).show();
+                return;
+            }
