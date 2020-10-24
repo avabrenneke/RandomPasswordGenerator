@@ -1,75 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Password Generator</title>
 
-<!-- CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
-<!-- jQuery and JS bundle w/ Popper.js -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <!-- jQuery and JS bundle w/ Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
 
 </head>
-<body>
 
+<body>
+    <!--Form Section-->
     <form class="border border-light p-5">
 
         <p class="h4 mb-4 text-center">Password Generator</p>
-    
+
         <label for="textarea">Generate Password</label>
         <textarea id="textarea" class="form-control mb-4" placeholder="password"></textarea>
-    
-        <button class="btn btn-info btn-block my-4" data-toggle="modal" data-target="#exampleModal" type="button">GENERATE</button>
-    
+
+        <button class="btn btn-info btn-block my-4" data-toggle="modal" data-target="#exampleModal"
+            type="button">GENERATE</button>
+
     </form>
-    
+    <!--Checkboxes-->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form>
-                <div class="form-group">
-                  <label for="password-length" class="col-form-label">Password Length:</label>
-                  <input type="number" min="8" max="128" class="form-control" id="password-length">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
-                <label class="col-form-label">Password Characters:</label>
-                <br>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="useNumbers" value="option1">
-                    <label class="form-check-label" for="useNumbers">Numbers</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="useUpperCase" value="option2">
-                    <label class="form-check-label" for="inlineCheckbox2">Uppercase Letters</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="useLowerCase" value="option2">
-                    <label class="form-check-label" for="inlineCheckbox2">Lowercase Letters</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="useSpecChar" value="option2">
-                    <label class="form-check-label" for="inlineCheckbox2">Special Characters</label>
-                  </div>
-              </form>
-              <div class="errors alert alert-danger"></div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="password-length" class="col-form-label">Password Length:</label>
+                            <input type="number" min="8" max="128" class="form-control" id="password-length">
+                        </div>
+                        <label class="col-form-label">Password Characters:</label>
+                        <br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="useNumbers" value="option1">
+                            <label class="form-check-label" for="useNumbers">Numbers</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="useUpperCase" value="option2">
+                            <label class="form-check-label" for="inlineCheckbox2">Uppercase Letters</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="useLowerCase" value="option2">
+                            <label class="form-check-label" for="inlineCheckbox2">Lowercase Letters</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="useSpecChar" value="option2">
+                            <label class="form-check-label" for="inlineCheckbox2">Special Characters</label>
+                        </div>
+                    </form>
+                    <div class="errors alert alert-danger"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" id="clickMe" class="btn btn-primary">Generate</button>
+                </div>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-              <button type="button" id="clickMe" class="btn btn-primary">Generate</button>
-            </div>
-          </div>
         </div>
-      </div>
-      <script>
+    </div>
+    <!--END Form Section-->
+
+    <script>
         var btn = document.getElementById("clickMe");
         btn.addEventListener("click", passCriteria);
 
@@ -78,21 +88,20 @@
         var errors = document.querySelector('.errors');
         $(errors).hide();
 
-        function passCriteria(){
+        function passCriteria() {
             $(errors).hide();
             errors.innerHTML = "";
             var formErrors = '';
 
-            //$('#exampleModal').modal('hide');
-            //return;
             var passLength = document.querySelector('#password-length').value;
-        
+
+            //Check that password is a number, meets min&max
             var passInt = parseInt(passLength);
-            if (isNaN(passInt) || (passInt < 8 || passInt > 128)){
+            if (isNaN(passInt) || (passInt < 8 || passInt > 128)) {
                 formErrors = "Sorry, invalid password length";
             }
 
-            //check the checkboxes
+            //Checkbox Variables
             var checkBoxes = document.querySelector(".form-check-input");
             var useNumbersBox = document.querySelector('#useNumbers');
             var useUpperCaseBox = document.querySelector("#useUpperCase");
@@ -103,55 +112,56 @@
             var useUpperCase = useUpperCaseBox.checked || false;
             var useLowerCase = useLowerCaseBox.checked || false;
             var useSpecChar = useSpecCharBox.checked || false;
-
-            if (!useNumbers && !useUpperCase && !useLowerCase && !useSpecChar){
-                if (formErrors){
-                    formErrors+="<br>";
+            
+            //If user selects nothing
+            if (!useNumbers && !useUpperCase && !useLowerCase && !useSpecChar) {
+                if (formErrors) {
+                    formErrors += "<br>";
                 }
                 formErrors += "Please select at least one box";
             }
-        
-            if (formErrors){
+            //If there are any errors loop
+            if (formErrors) {
                 errors.innerHTML = formErrors;
                 $(errors).show();
                 return;
             }
-            //generate the password
+            //Password Generation
             txtArea.innerHTML = generatePassword(passInt, useNumbers, useUpperCase, useLowerCase, useSpecChar);
-            
-            //close modal
+
+            //Closing the Modal
             $('#exampleModal').modal('hide');
         }
-
-        function generatePassword(passInt, useNumbers, useUpperCase, useLowerCase, useSpecChar){
+        //Running the Random Generator Function given users criteria
+        function generatePassword(passInt, useNumbers, useUpperCase, useLowerCase, useSpecChar) {
             var useableCharacters = '';
             var password = '';
 
-            if (useNumbers){
+            if (useNumbers) {
                 useableCharacters += '123456789';
             }
 
-            if (useUpperCase){
+            if (useUpperCase) {
                 useableCharacters += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
             }
 
-            if (useLowerCase){
+            if (useLowerCase) {
                 useableCharacters += 'abcdefghijklmnopqrstuvwxyz';
             }
 
-            if (useSpecChar){
+            if (useSpecChar) {
                 useableCharacters += "!#$%&'()*+,-./:;<=>?][^_`}{|~";
             }
 
-            for(var x =0; x<passInt; x++){
-                var randomNum = Math.floor(Math.random() * useableCharacters.length);  
+            for (var x = 0; x < passInt; x++) {
+                var randomNum = Math.floor(Math.random() * useableCharacters.length);
                 password += useableCharacters[randomNum];
             }
 
             return password;
         }
     </script>
-    
-</body>
-</html>
 
+</body>
+
+</html>
