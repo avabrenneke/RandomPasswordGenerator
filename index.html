@@ -116,3 +116,42 @@
                 $(errors).show();
                 return;
             }
+            //generate the password
+            txtArea.innerHTML = generatePassword(passInt, useNumbers, useUpperCase, useLowerCase, useSpecChar);
+            
+            //close modal
+            $('#exampleModal').modal('hide');
+        }
+
+        function generatePassword(passInt, useNumbers, useUpperCase, useLowerCase, useSpecChar){
+            var useableCharacters = '';
+            var password = '';
+
+            if (useNumbers){
+                useableCharacters += '123456789';
+            }
+
+            if (useUpperCase){
+                useableCharacters += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            }
+
+            if (useLowerCase){
+                useableCharacters += 'abcdefghijklmnopqrstuvwxyz';
+            }
+
+            if (useSpecChar){
+                useableCharacters += "!#$%&'()*+,-./:;<=>?][^_`}{|~";
+            }
+
+            for(var x =0; x<passInt; x++){
+                var randomNum = Math.floor(Math.random() * useableCharacters.length);  
+                password += useableCharacters[randomNum];
+            }
+
+            return password;
+        }
+    </script>
+    
+</body>
+</html>
+
